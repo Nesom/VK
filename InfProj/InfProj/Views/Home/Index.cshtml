@@ -1,0 +1,18 @@
+﻿@model HomePageModel
+    <h2>Hello, @Model.User.Login!</h2><br />
+    <img style="width:inherit; height:inherit;" src="data:image/jpeg;base64,
+                                 @Convert.ToBase64String(Model.User.Image)" /><br />
+<h2>Your posts</h2>
+@foreach (var item in Model.Posts.Where(p => p.Owner == User.Identity.Name))
+{
+    <div class="white" style="border:medium; width:50%">
+        <h3>@item.Name</h3>
+        <p>@item.Time</p>
+        <p style="word-wrap:break-word">@item.Text</p><br />
+        <img style="width:inherit; height:inherit;" src="data:image/jpeg;base64,
+                                 @Convert.ToBase64String(item.Image)" />
+    </div>
+
+}
+<br />
+<a asp-controller="Home" asp-action="Create">Create new post</a>

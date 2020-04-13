@@ -1,0 +1,13 @@
+﻿@model IEnumerable<User>
+
+@foreach (var e in Model)
+{
+    <h3>@e.Login</h3>
+    <img style="width:inherit; height:inherit;" src="data:image/jpeg;base64,
+                                 @Convert.ToBase64String(e.Image)" />
+    <br />
+    <a asp-controller="Home" asp-action="Accept" asp-route-who="@e.Login">Accept</a>
+    <a asp-controller="Home" asp-action="Decline" asp-route-who="@e.Login">Decline</a>
+    <br />
+}
+

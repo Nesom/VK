@@ -1,0 +1,24 @@
+﻿
+
+<form asp-action="Create" asp-antiforgery="true" enctype="multipart/form-data" method="post" >
+    <div>
+        <div>
+            <label name="name"></label>
+            <input type="text" name="name" />
+        </div>
+        <div>
+            <label name="text"></label>
+            <input type="text" name="text" />
+        </div>
+        <div>
+            <label name="uploadImage"></label>
+            <input type="file" name="uploadImage" />
+        </div>
+        <div>
+            <div class="form-group">
+                <input type="submit" value="Войти" class="btn" />
+            </div>
+        </div>
+    </div>
+</form>
+

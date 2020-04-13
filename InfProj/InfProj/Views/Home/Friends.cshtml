@@ -1,0 +1,23 @@
+﻿@model List<User>
+<h1>Friends</h1>
+<form asp-controller="Home" asp-action="Friends">
+    <div>
+        <div>
+            <label name="login"></label>
+            <input type="text" name="login" />
+        </div>
+        <div>
+            <div class="form-group">
+                <input type="submit" value="Искать" class="btn" />
+            </div>
+        </div>
+    </div>
+</form>
+@foreach (var e in Model)
+{
+    <h2>@e.Login</h2>
+    <br />
+    <img style="width:50%; height:50%;" src="data:image/jpeg;base64,
+                                 @Convert.ToBase64String(e.Image)" />
+    <br />
+}
